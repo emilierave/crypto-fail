@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2021",
     "lib": [
+      "es2021.intl",
+      "esnext.asynciterable",
       "dom",
       "dom.iterable",
       "esnext"
@@ -18,8 +20,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve"
-  },
+    "jsx": "preserve",
+ "emitDecoratorMetadata": true,
+  "experimentalDecorators": true
+},
   "include": ["vite.config.ts"]
     "src"
   ]
