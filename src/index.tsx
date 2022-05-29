@@ -1,19 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import ReactDOM from 'react-dom';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './App.scss';
+import {
+    ApolloClient,
+    InMemoryCache,
+    ApolloProvider,
+} from "@apollo/client";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const client = new ApolloClient({
+    uri: "https://48p1r2roz4.sse.codesandbox.io",
+    cache: new InMemoryCache()
+});
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(
+    <React.StrictMode>
+        {/* pass the apollo client to a provider, so it can be accessed by any component */}
+        <ApolloProvider client={client}>
+            <App/>
+        </ApolloProvider>
+    </React.StrictMode>,
+    document.getElementById('root')
+);

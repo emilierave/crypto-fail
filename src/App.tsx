@@ -1,44 +1,43 @@
-// @ts-ignore
-import logo from "./DSC00202-copy.svg";
+import logo from "./graphic/figure.png";
+import logo1 from "./graphic/logo1.svg";
 import React from 'react';
-import InputForm from "./home";
-import './App.css';
-function App() {
-  const dialogAlert = () => {
-    alert('There is no hint in here')
-  }
-  const dialogAlert2 = () => {
-    alert('There is no good or bad name, it is just a name, do not worry')
-  }
+import AddInputForm from "./AddInputForm";
+import {Input} from './Input';
+import  {InputsList} from './InputsList';
+import './App.scss';
+import useInputs from "./useInputs";
+import ExchangeRates from "./Exchange";
+
+interface InputProps {
+}
+
+export const App: React.FC<InputProps> = () => {
+    const { addInput, removeInput, InputsDataList,} = useInputs();
   return (
       <main>
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Give a name to an abstract woman above
-        </p>
-        <button onClick={dialogAlert}>Give Me a hint</button>
-        <button onClick={dialogAlert2}>Any hint, please</button>
-        <InputForm/>
-        <a
-            className="App-link"
-            href="https://github.com/emilierave/daftcode-react-app"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-          link to git repo
-        </a>
-        <a
-            className="App-link"
-            href="https://en.wikipedia.org/wiki/Edge_cover"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-          edge cover
-        </a>
-      </header>
-    </div>
+          <div className ="futureTable">
+              <img src={logo1} className="Binance-logo" alt="logo2" />
+              <h1>Now you can track all your cryptos here!</h1>
+              <p>Just enter the cryptocurrency code on the form to the right</p>
+                  <div className="table"></div> <ExchangeRates/>
+          </div>
+
+          <div className="row">
+           <InputsList InputsData={InputsDataList} onRemove={(index) => removeInput(index)} />
+          </div>
+
+          <div className="Input-Form">
+              <AddInputForm onChange={Input => addInput(Input)} />
+          </div>
+
+          <div className="Logo">
+              <footer className="App-logo">
+                  <img src={logo} className="App-logo" alt="logo" />
+              </footer>
+          </div>
+             <footer className="footer">
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel nisi eget augue consectetur tincidunt euismod vel nunc. Fusce sodales vitae ligula sed lobortis. Praesent orci risus, consectetur commodo urna et, tempus suscipit metus. Cras rutrum suscipit pellentesque. Praesent eget finibus risus. Suspendisse sollicitudin felis dignissim hendrerit mollis. Aliquam vel iaculis tellus.
+             </footer>
   </main>
   );
 }
