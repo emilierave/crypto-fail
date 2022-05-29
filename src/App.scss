@@ -1,0 +1,179 @@
+button {
+    align-items: center;
+    background-clip: padding-box;
+    background-color: initial;
+    background-image: none;
+    border-style: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    flex-direction: row;
+    flex-shrink: 0;
+    font-family: Eina01,sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    justify-content: center;
+    line-height: 24px;
+    margin: 0;
+    min-height: 64px;
+    outline: none;
+    overflow: visible;
+    padding: 19px 26px;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: auto;
+    word-break: keep-all;
+    z-index: 0;
+}
+@media (min-width: 768px) {
+  button {
+    padding: 19px 32px;
+  }
+}
+button:before,
+button:after {
+  border-radius: 80px;
+}
+button:before {
+  background-color: rgb(243, 74, 38);
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -2;
+
+}
+.Input-Form{
+    grid-column: 4 / 4;
+    grid-row: 2/4;
+    float: right;
+    width: 40%;
+  padding-bottom: 20%;
+  --text-color: grey;
+  text-align: center;
+  font-size: small;
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-decoration-color: black;
+  background: white;
+
+}
+
+.futureTable {
+    grid-column: 1/4;
+    grid-row:3/4;
+    float: left;
+    width: 30%;
+}
+
+.padding-bottom {
+    display: flex;
+    padding-bottom: 5%;
+}
+
+body{
+  font-family: Eina01,sans-serif;
+   margin: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
+    color: var(--text-color);
+    min-height: 100vh;
+    background: url("https://raw.githubusercontent.com/coingaming/front-end-test-assignment/master/assets/bg.png");
+    background-position: top -20vh right -70vw;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+.form {
+  background-color: #fff;
+  padding: 36px 42px;
+  max-width: 430px;
+  display: flex;
+  flex-direction: column;
+  --text-color: black;
+}
+
+.list {
+  --card-height: 80px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc(var(--card-height) * 4);
+}
+
+.Card {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--card-height);
+  padding: 12px 12px 12px 0;
+  width: 300px;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    --start-color: rgba(255, 255, 255, 0.3);
+    background: var(---start-color);
+    background: linear-gradient(90deg, var(--start-color) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.data {
+  margin-left: 32px;
+
+  & > * {
+    margin: 0;
+  }
+
+  h6 {
+    font-size: 16px;
+  }
+
+  & p {
+    color: var(--secondary-text-color);
+    margin-top: 14px;
+  }
+}
+
+.remove {
+  cursor: crosshair;
+}
+
+.footer {
+  height: var(--footer-height);
+  padding: 32px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  font-size: small;
+  color: #a6a6a9;
+}
+
+
+
